@@ -1,21 +1,28 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 export default class Register extends Component {
-    constructor(){
-        super()
-        this.state={
-            email:"",
-            password:"",
-            first:"",
-            last:"",
-            address:""
-        }
-    }
-    handleChange = e => {
-        this.setState({
-          [e.target.name]: e.target.value
-        });
-      };
+  constructor() {
+    super();
+    this.state = {
+      email: "",
+      password: "",
+      first: "",
+      last: "",
+      address: ""
+    };
+  }
+  handleChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+  submit = () => {
+    const { email, password, first, last, address } = this.state;
+    const user = { email, password, first, last, address };
+    console.log(user);
+    axios.post("/auth/register", user);
+  };
   render() {
     return (
       <div>
@@ -46,7 +53,7 @@ export default class Register extends Component {
           onChange={this.handleChange}
           placeholder="Address"
         />
-        <button>Register</button>
+        <button onClick={this.submit}>Register</button>
       </div>
     );
   }
