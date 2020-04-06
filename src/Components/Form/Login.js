@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { getSession } from "../../Redux/userReducer";
 
@@ -30,7 +30,10 @@ class Login extends Component {
       return <Redirect to="/Profile" />;
     }
     return (
-      <div>
+      <main className='card'>
+      <section className='picture-card'>
+      </section>
+      <div className='logincard'>
         <input
           name="email"
           onChange={this.handleChange}
@@ -44,7 +47,12 @@ class Login extends Component {
           placeholder="Password"
         />
         <button onClick={this.submit}>Login</button>
+        <section>
+          Want to make a new account?
+        </section>
+        <Link to='/register'> register</Link>
       </div>
+      </main>
     );
   }
 }
