@@ -4,7 +4,9 @@ import { Link, Redirect } from "react-router-dom";
 export default function Header() {
   return (
     <div className="header">
+      <Link to='/' style={{ textDecoration: "none", color: "white" }}>
       <div className="logo">Wiltt</div>
+      </Link>
       <div className="nav" id="bar">
         <Link to="/login" style={{ textDecoration: "none", color: "white" }}>
           <p className="link">Login</p>
