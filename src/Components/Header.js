@@ -8,8 +8,9 @@ export default function Header() {
       <div className="logo">Wiltt</div>
       </Link>
       <div className="nav" id="bar">
-        <Link to="/login" style={{ textDecoration: "none", color: "white" }}>
-          <p className="link">Login</p>
+        
+        <Link to="/Account" style={{ textDecoration: "none", color: "white" }}>
+          <p className="link">Account</p>
         </Link>
         <Link to='/shoes' style={{ textDecoration: "none", color: "white" }}>
           <p className="link">Shoes</p>

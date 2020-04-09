@@ -4,7 +4,9 @@ const initialState = {
     email: "",
     firstname: "",
     lastname: "",
-    address: ""
+    address: "",
+    cart:[],
+    total:0
 }
 const GET_SESSION = "GET_SESSION"
 
@@ -21,11 +23,13 @@ export default function reducer(state = initialState, action) {
             console.log(action.payload)
             return {
                 ...state,
-                user_id: action.payload.data.users_id,
+                user_id: action.payload.data.user_id,
                 email: action.payload.data.email,
                 firstname: action.payload.data.first,
                 lastname: action.payload.data.last,
-                address: action.payload.data.address
+                address: action.payload.data.address,
+                cart: action.payload.data.cart,
+                total: action.payload.data.total
             }
         default:
             return state;

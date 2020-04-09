@@ -38,7 +38,6 @@ class Shoes extends Component {
   }
 
   render() {
-    console.log(this.props.shoes.shoes);
     const shoes = this.props.shoes.shoes.map((element) => {
       return (
         <div className="product">
