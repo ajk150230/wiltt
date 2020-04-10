@@ -47,7 +47,7 @@ const stripeCheckout = async (req, res) => {
         source: token.id
       });
   
-      const idempotency_key = uuid();
+      const idempotencyKey = uuid();
       const charge = await stripe.charges.create(
         {
           amount: order.price * 100,

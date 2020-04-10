@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getAllShoes } from "../../Redux/shoesReducer";
+import {TimelineLite} from 'gsap'
 import Product from "./Product";
 
 class Shoes extends Component {
   constructor() {
     super();
+    // this.myTween = new TimelineLite({paused: true});
     this.state = {
       shoesList: [],
       open: false,
@@ -19,7 +21,10 @@ class Shoes extends Component {
   //fkgjfkgfdfdfdfdxczxcsdasdrgdfgsdsd
   //dfdfdfsdfs
   componentDidMount() {
-    this.props.getAllShoes();
+    this.props.getAllShoes()
+    this.setState({shoesList: this.props.shoes.shoes})
+    console.log(this.state.shoesList)
+    // this.myTween.staggerTo(this.props.shoes.shoes, 0.5, {y: 0, autoAlpha: 1}, 0.1);
   }
   handleClick = (brand, name, price, id, img) => {
     this.setState({
@@ -38,11 +43,13 @@ class Shoes extends Component {
   }
 
   render() {
-    const shoes = this.props.shoes.shoes.map((element) => {
+    const shoes = this.props.shoes.shoes.map((element, index) => {
       return (
         <div className="product">
           <div
             className="product-picture"
+            key={index}
+            // ref={div => this.props.shoes.shoes[index] = div}
             style={{ backgroundImage: `url(${element.img_url})` }}
             onClick={() =>
               this.handleClick(

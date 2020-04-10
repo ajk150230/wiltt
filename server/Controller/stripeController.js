@@ -1,3 +1,5 @@
+const uuid = require("uuid/v4");
+
 module.exports={
     stripeCheckout: async (req, res) => {
         console.log("Request:", req.body);
@@ -44,4 +46,4 @@ module.exports={
       
         res.json({ error, status });
       }
-}
+    }

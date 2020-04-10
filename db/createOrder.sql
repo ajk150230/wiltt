@@ -1,0 +1,1 @@
+insert into orders (user_id, price) values ($1, $2)
