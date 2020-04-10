@@ -1,3 +1,14 @@
+
+
+
+
+
+
+
+
+
+
+
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import { getSession } from "../../Redux/userReducer";
@@ -12,9 +23,7 @@ import Profile from '../../Components/Profile'
     render() {
         return (
             <div>
-                {console.log(this.props.user)}
-                {!this.props.user.user_id ? <Login/> : ''}
-                {this.props.user.user_id? <Profile/>: ''}
+                {this.props.user.user_id? <Profile/>: <Login user_id={this.props.user.user_id}/>}
             </div>
         )
     }

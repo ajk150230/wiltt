@@ -54,7 +54,7 @@ export default class Questions extends Component {
       return <section className="mini-card">{element}</section>;
     });
     return (
-      <div>
+      <div data-testid="questions">
         <div>Tell us about you</div>
         <div>What are your favorite brands?</div>
         <button onClick={()=> this.myTween.play()}>Play</button>

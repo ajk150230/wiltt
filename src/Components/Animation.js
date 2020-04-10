@@ -20,7 +20,7 @@ export default function Animation() {
     // TweenMax.from(card1, .8, {opacity: 0, x: 40, ease: Power3.easeOut, delay: .3})
     // TweenMax.from(card2, .8, {opacity: 0, x: 40, ease: Power3.easeOut, delay: .6})
     // TweenMax.from(card3, .8, {opacity: 0, x: 40, ease: Power3.easeOut, delay: .9})
-    TweenMax.staggerFrom([card, card1, card2, card3], .8, {opacity: 0, x: 40, ease: Power3.easeOut}, .3)
+    TweenMax.staggerFrom([card, card1, card2, card3], 2, {opacity: 0, x: 40, ease: Power3.easeOut}, .3)
   }, []);
 
   const handleExpand=()=>{

@@ -36,6 +36,31 @@ module.exports = {
           currentUser.cart.splice(target, 1)
           currentUser.total -= data.price
       }
-
+  },
+  getOrder: function (req, res){
+    const db = req.app.get("db");
+    const {user_id} = req.session.currentUser
+    db.getOrder(user_id)
+        .then(order=>{
+            console.log(order)
+            res.status(200).send(order)
+        })
+        .catch(err =>{
+            console.error(err)
+            res.sendStatus(500)
+        })
+  },
+  deleteOrder: function (req, res){
+    const db = req.app.get("db");
+    const orders_id = req.params.orders_id
+    console.log(orders_id)
+    db.deleteOrder(orders_id)
+        .then(response=>{
+            res.status(200).send(response)
+        })
+        .catch(error=>{
+            console.log(error)
+            res.status(409).json("youre done")
+        })
   }
 };

@@ -34,11 +34,13 @@ export default class Header extends Component {
           </div>
             <img
               id="hamburger"
+              data-testid='hamburger'
               onClick={() => this.setState({ open: !this.state.open })}
               src="https://i.ya-webdesign.com/images/hamburger-menu-icon-png-white-6.png"
             />
         </div>
-        <menu className={this.state.open === true ? "menu-open" : ""}>
+        <menu className={this.state.open === true ? "menu-open" : ""} data-testid='menu'>
+          <h6>Menu</h6>
           <Link
             to="/Account"
             style={{ textDecoration: "none", color: "white" }}

@@ -73,6 +73,17 @@ module.exports = {
       return res.status(200).json(req.session.currentUser)
     }
   },
+  editAddress: (req, res) =>{
+      const db = req.app.get('db')
+      const user_id = req.session.currentUser.user_id
+      const {address} = req.body
+      db.editAddress([user_id, address])
+        .then((user)=>{
+            console.log(user)
+            req.session.currentUser.address=user[0].address
+            res.status(200).send(req.session.currentUser)})
+        .catch(err=>{console.log(err)})
+  },
   logout: (req, res) => {
     req.session.destroy();
     return res.sendStatus(200);

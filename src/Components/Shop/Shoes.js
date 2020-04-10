@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getAllShoes } from "../../Redux/shoesReducer";
-import {TimelineLite} from 'gsap'
+import {TimelineLite} from 'gsap/all'
 import Product from "./Product";
-
 class Shoes extends Component {
   constructor() {
     super();
-    // this.myTween = new TimelineLite({paused: true});
+    this.myTween = new TimelineLite({paused: true});
     this.state = {
       shoesList: [],
       open: false,
@@ -41,7 +40,7 @@ class Shoes extends Component {
       open: !this.state.open
     })
   }
-
+  
   render() {
     const shoes = this.props.shoes.shoes.map((element, index) => {
       return (
@@ -84,7 +83,6 @@ class Shoes extends Component {
     );
   }
 }
-
 const mapStateToProps = (reduxState) => ({ shoes: reduxState.shoes });
 
 export default connect(mapStateToProps, { getAllShoes })(Shoes);

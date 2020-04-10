@@ -16,6 +16,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.0",
     "gsap": "^3.2.6",
+    "jest": "24.9.0",
     "massive": "^6.2.0",
     "node-sass": "^4.13.1",
     "react": "^16.13.1",
@@ -49,5 +50,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "supertest": "^4.0.2"
   }
 }

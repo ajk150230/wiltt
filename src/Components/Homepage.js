@@ -6,7 +6,7 @@ import Banner from './Banner'
 export default class Homepage extends Component {
   render() {
     return (
-      <section className="homepage">
+      <section className="homepage" data-testid="homepage">
         <Banner/>
         <header className="banner">
           <div className="picture"></div>
